@@ -1,0 +1,35 @@
+name-template: '🚧 Upcoming Release'
+tag-template: 'v$NEXT_VERSION'
+change-template: '- $TITLE (#$NUMBER) by @$AUTHOR'
+change-title-escapes: '-'
+template: |
+  ## Changes
+
+  $CHANGES
+
+  ## Contributors
+
+  $CONTRIBUTORS
+
+categories:
+  - title: '🚀 Features'
+    labels:
+      - feature
+  - title: '🐛 Bug Fixes'
+    labels:
+      - bug
+  - title: '🛠️ Build'
+    labels:
+      - build
+  - title: '♻️ Refactor'
+    labels:
+      - refactor
+  - title: '📚 Docs'
+    labels:
+      - documentation
+  - title: '⚡ Performances'
+    labels:
+      - performance
+  - title: '🧹 Code Cleanup'
+    labels:
+      - clean
