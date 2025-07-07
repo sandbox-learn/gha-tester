@@ -14,3 +14,5 @@ permissions:
 jobs:
   call_reusable_workflow:
     uses: aassalax/workflows/.github/workflows/release-kt.yml@main
+    secrets:
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
