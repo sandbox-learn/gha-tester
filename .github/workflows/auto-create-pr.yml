@@ -1,0 +1,12 @@
+name: Auto-create PR on push branch
+
+on:
+  create:
+    branches:
+      - '*'
+
+jobs:
+  call_reusable_workflow:
+    uses: aassalax/workflows/.github/workflows/auto-create-pr.yml@main
+    secrets:
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
