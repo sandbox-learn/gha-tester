@@ -19,5 +19,5 @@ jobs:
           echo "State: ${{ github.event.issue.state }}"
           
           echo "Labels:"
-          echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name'
+          echo "${{ github.event.issue.labels }}"
     
