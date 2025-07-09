@@ -20,5 +20,5 @@ jobs:
           
           echo "Labels:"
           echo "${{ github.event.issue.labels }}"
-          echo "${{ toJson(github.event.issue.labels) }}" | jq -r '.[].name' "
+          echo '${{ toJson(github.event.issue.labels) }}' | jq -r '.[].name'
     
