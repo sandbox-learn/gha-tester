@@ -2,7 +2,7 @@ name: Project Card Moved Listener
 
 on:
   issues:
-    types: [ opened, edited, labeled, unlabeled ]
+    types: opened
 
 jobs:
   log_project_card_move:
