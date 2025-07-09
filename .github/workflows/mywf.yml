@@ -9,14 +9,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show project card move info
+      - name: Display issue info
         run: |
-          echo "Project card moved event detected"
-
-          echo "Action: ${{ github.event.action }}"
-          echo "Project Card ID: ${{ github.event.project_card.id }}"
-          echo "Project Card Content URL: ${{ github.event.project_card.content_url }}"
-          echo "Previous Column ID: ${{ github.event.project_card.previous_column_id }}"
-          echo "Current Column ID: ${{ github.event.project_card.column_id }}"
-
-          # To get more info about columns, you might want to query the GitHub API
+          echo "Issue event detected: ${{ github.event.action }}"
+          
+          echo "Issue number: ${{ github.event.issue.number }}"
+          echo "Title: ${{ github.event.issue.title }}"
+          echo "Description: ${{ github.event.issue.body }}"
+          echo "State: ${{ github.event.issue.state }}"
+          
+          echo "Labels:"
+          for label in ${{ toJson(github.event.issue.labels) }}; do echo "$label"; done
+    
