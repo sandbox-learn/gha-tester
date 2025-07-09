@@ -1,0 +1,22 @@
+name: Project Card Moved Listener
+
+on:
+  project_card:
+    types: [moved]
+
+jobs:
+  log_project_card_move:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show project card move info
+        run: |
+          echo "Project card moved event detected"
+
+          echo "Action: ${{ github.event.action }}"
+          echo "Project Card ID: ${{ github.event.project_card.id }}"
+          echo "Project Card Content URL: ${{ github.event.project_card.content_url }}"
+          echo "Previous Column ID: ${{ github.event.project_card.previous_column_id }}"
+          echo "Current Column ID: ${{ github.event.project_card.column_id }}"
+
+          # To get more info about columns, you might want to query the GitHub API
